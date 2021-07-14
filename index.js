@@ -8,7 +8,7 @@ const app_1 = __importDefault(require("./Server/Config/app"));
 const debug_1 = __importDefault(require("debug"));
 debug_1.default('week-5b:server');
 const http_1 = __importDefault(require("http"));
-let port = normalizePort(process.env.PORT || '3500');
+let port = normalizePort(process.env.PORT || '3000');
 app_1.default.set('port', port);
 let server = http_1.default.createServer(app_1.default);
 server.listen(port);

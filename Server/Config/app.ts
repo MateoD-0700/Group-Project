@@ -39,6 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+
 // perform routing
 app.use('/', indexRouter);
 app.use('/clothing-list', clothingListRouter); // create a separate "area" of our web application
