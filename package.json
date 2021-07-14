@@ -2,10 +2,10 @@
   "name": "comp229-m2021-week5",
   "version": "0.0.3",
   "private": true,
-  "description": "Assignment 2",
+  "description": "Demo Project for COMP229 - Week 5",
   "main": "index.js",
   "repository": "https://github.com/CentennialCollege/COMP229-M2021-Week5b.git",
-  "author": "Mateo Davila",
+  "author": "Tom Tsiliopoulos <tsiliopoulos@hotmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "node index.js"

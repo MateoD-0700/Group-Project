@@ -23,5 +23,3 @@ router.get('/services', DisplayServicesPage);
 /* GET new tourney page. */
 router.get('/newtourney', DisplayNewTourneyPage);
 //module.exports = router;
-
-/* GET view tourney page. */
