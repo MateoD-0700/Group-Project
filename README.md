@@ -1,3 +1,3 @@
-# COMP229-M2021-Week5b
+# Group Project
 
-Demo Project for COMP229 - Week 5
+
