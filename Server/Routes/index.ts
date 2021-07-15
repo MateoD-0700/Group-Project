@@ -2,9 +2,8 @@ import express from 'express';
 const router = express.Router();
 export default router;
 
-// instantiate an object of type index controller
-import { DisplayAboutPage, DisplayNewTourneyPage, DisplayHomePage, DisplayActiveTourneyPage, DisplayServicesPage } from '../Controllers/index';
-
+// instantiate an object of type index controller DisplayCompetitorsListPage
+import { DisplayNewTourneyPage, DisplayAboutPage, DisplayHomePage, DisplayActiveTourneyPage, DisplayServicesPage, DisplayViewTourneyPage } from '../Controllers/index';
 /* GET home page. */
 router.get('/', DisplayHomePage);
 
@@ -22,6 +21,8 @@ router.get('/services', DisplayServicesPage);
 
 /* GET new tourney page. */
 router.get('/newtourney', DisplayNewTourneyPage);
-//module.exports = router;
+// router.get('/competitor-list', DisplayCompetitorsListPage)
 
 /* GET view tourney page. */
+router.get('/viewtourney', DisplayViewTourneyPage);
+//module.exports = router;

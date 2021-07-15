@@ -13,4 +13,5 @@ router.get('/about', index_1.DisplayAboutPage);
 router.get('/activetourney', index_1.DisplayActiveTourneyPage);
 router.get('/services', index_1.DisplayServicesPage);
 router.get('/newtourney', index_1.DisplayNewTourneyPage);
+router.get('/viewtourney', index_1.DisplayViewTourneyPage);
 //# sourceMappingURL=index.js.map

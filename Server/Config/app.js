@@ -30,6 +30,8 @@ const morgan_1 = __importDefault(require("morgan"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const index_1 = __importDefault(require("../Routes/index"));
 const competitor_1 = __importDefault(require("../Routes/competitor"));
+const match_1 = __importDefault(require("../Routes/match"));
+const tournament_1 = __importDefault(require("../Routes/tournament"));
 const app = express_1.default();
 exports.default = app;
 const DBConfig = __importStar(require("./db"));
@@ -51,6 +53,8 @@ app.use(express_1.default.static(path_1.default.join(__dirname, '../../Client'))
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../node_modules')));
 app.use('/', index_1.default);
 app.use('/competitor-list', competitor_1.default);
+app.use('/match-list', match_1.default);
+app.use('/tournament-list', tournament_1.default);
 app.use(function (req, res, next) {
     next(http_errors_1.default(404));
 });

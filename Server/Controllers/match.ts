@@ -2,18 +2,19 @@ import express, { Request, Response, NextFunction } from 'express';
 
 // Clothing Model
 import Competitor from '../Models/competitor';
+import Match from '../Models/match';
 
 // display page functions
-export function DisplayCompetitorListPage(req: Request, res: Response, next: NextFunction): void
+export function DisplayMatchListPage(req: Request, res: Response, next: NextFunction): void
 {
     // db.competitor.find()
-    Competitor.find(function(err, competitorCollection){
+    Match.find(function(err, matchCollection){
         if(err)
         {
             return console.error(err);
         }
 
-        res.render('index', {title: 'Competitor List', page: 'competitor-list', competitor: competitorCollection});
+        res.render('index', {title: 'Match List', page: 'match-list', match: matchCollection});
     });
 }
 
@@ -23,7 +24,7 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 
     console.log(id);
 
-    Competitor.findById(id, {}, {}, (err, competitorItemToEdit) => 
+    Match.findById(id, {}, {}, (err, matchItemToEdit) => 
     {
         if(err)
         {
@@ -33,13 +34,13 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 
         // show the edit page
 
-        res.render('index', {title: 'Edit', page: 'edit', competitor: competitorItemToEdit});
+        res.render('index', {title: 'editmatch', page: 'editmatch', match: matchItemToEdit});
     });
 }
 
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
-        res.render('index', {title: 'Add', page: 'edit', competitor: ''});
+        res.render('index', {title: 'Add', page: 'editmatch', match: ''});
 }
 
 // Process (E)dit page
@@ -48,22 +49,24 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     let id = req.params.id;
 
     // instantiate a new Competitor Item
-    let updatedCompetitorItem = new Competitor
+    let updatedMatchItem = new Match
     ({
        "_id": id,
-      "fullname": req.body.fullname,
-      "description": req.body.description
+      "matchNumber": req.body.matchNumber,
+      "competitor1Name": req.body.competitor1Name,
+      "competitor2Name": req.body.competitor2Name,
+      "winner": req.body.winner
     });
   
     // find the competitor item via db.competitor.update({"_id":id}) and then update
-    Competitor.updateOne({_id: id}, updatedCompetitorItem, {}, (err) =>{
+    Match.updateOne({_id: id}, updatedMatchItem, {}, (err) =>{
       if(err)
       {
         console.error(err);
         res.end(err);
       }
   
-      res.redirect('/competitor-list');
+      res.redirect('/match-list');
     });
 }
 
@@ -71,21 +74,23 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
 export function ProcessAddPage(req: Request, res: Response, next: NextFunction): void
 {
   // instantiate a new Competitor
-  let newCompetitor = new Competitor
+  let newMatch = new Match
   ({
-      "fullname": req.body.fullname,
-      "description": req.body.description
+      "matchNumber": req.body.matchNumber,
+      "competitor1Name": req.body.competitor1Name,
+      "competitor2Name": req.body.competitor2Name,
+      "winner": req.body.winner
   });
 
   // db.competitor.insert({competitor data is here...})
-  Competitor.create(newCompetitor, (err) => {
+  Match.create(newMatch, (err) => {
     if(err)
     {
       console.error(err);
       res.end(err);
     }
 
-    res.redirect('/competitor-list');
+    res.redirect('/match-list');
   });
 }
 
@@ -94,17 +99,14 @@ export function ProcessDeletePage(req: Request, res: Response, next: NextFunctio
 {
     let id = req.params.id;
 
-  // db.competitor.remove({"_id: id"})
-  Competitor.remove({_id: id}, (err) => {
+  // db.contact.remove({"_id: id"})
+  Match.remove({_id: id}, (err) => {
     if(err)
     {
       console.error(err);
       res.end(err);
     }
 
-    res.redirect('/competitor-list');
+    res.redirect('/match-list');
   });
 }
-
-
-

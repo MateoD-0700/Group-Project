@@ -2,18 +2,19 @@ import express, { Request, Response, NextFunction } from 'express';
 
 // Clothing Model
 import Competitor from '../Models/competitor';
+import Match from '../Models/match';
+import Tournament from '../Models/tournament';
 
 // display page functions
-export function DisplayCompetitorListPage(req: Request, res: Response, next: NextFunction): void
+export function DisplayTournamentListPage(req: Request, res: Response, next: NextFunction): void
 {
     // db.competitor.find()
-    Competitor.find(function(err, competitorCollection){
+    Tournament.find(function(err, tournamentCollection){
         if(err)
         {
             return console.error(err);
         }
-
-        res.render('index', {title: 'Competitor List', page: 'competitor-list', competitor: competitorCollection});
+        res.render('index', {title: 'Tournament List', page: 'tournament-list', tournament: tournamentCollection});
     });
 }
 
@@ -23,7 +24,7 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 
     console.log(id);
 
-    Competitor.findById(id, {}, {}, (err, competitorItemToEdit) => 
+    Tournament.findById(id, {}, {}, (err, tournamentItemToEdit) => 
     {
         if(err)
         {
@@ -33,13 +34,13 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 
         // show the edit page
 
-        res.render('index', {title: 'Edit', page: 'edit', competitor: competitorItemToEdit});
+        res.render('index', {title: 'edittournament', page: 'edittournament', tournament: tournamentItemToEdit});
     });
 }
 
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
-        res.render('index', {title: 'Add', page: 'edit', competitor: ''});
+        res.render('index', {title: 'Add', page: 'edittournament', tournament: ''});
 }
 
 // Process (E)dit page
@@ -48,22 +49,26 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     let id = req.params.id;
 
     // instantiate a new Competitor Item
-    let updatedCompetitorItem = new Competitor
+    let updatedTournamentItem = new Tournament
     ({
        "_id": id,
-      "fullname": req.body.fullname,
-      "description": req.body.description
+      "tournamentName": req.body.tournamentName,
+      "numberOfCompetitors": req.body.numberOfCompetitors,
+      "type": req.body.type,
+      "description": req.body.description,
+        "competitorList": req.body.competitorList,
+      "champion": req.body.champion
     });
   
     // find the competitor item via db.competitor.update({"_id":id}) and then update
-    Competitor.updateOne({_id: id}, updatedCompetitorItem, {}, (err) =>{
+    Tournament.updateOne({_id: id}, updatedTournamentItem, {}, (err) =>{
       if(err)
       {
         console.error(err);
         res.end(err);
       }
   
-      res.redirect('/competitor-list');
+      res.redirect('/tournament-list');
     });
 }
 
@@ -71,21 +76,25 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
 export function ProcessAddPage(req: Request, res: Response, next: NextFunction): void
 {
   // instantiate a new Competitor
-  let newCompetitor = new Competitor
+  let newTournament = new Tournament
   ({
-      "fullname": req.body.fullname,
-      "description": req.body.description
+      "tournamentName": req.body.tournamentName,
+      "numberOfCompetitors": req.body.numberOfCompetitors,
+      "type": req.body.type,
+      "description": req.body.description,
+      "competitorList": req.body.competitorList,
+      "champion": req.body.champion
   });
 
   // db.competitor.insert({competitor data is here...})
-  Competitor.create(newCompetitor, (err) => {
+  Tournament.create(newTournament, (err) => {
     if(err)
     {
       console.error(err);
       res.end(err);
     }
 
-    res.redirect('/competitor-list');
+    res.redirect('/tournament-list');
   });
 }
 
@@ -94,17 +103,14 @@ export function ProcessDeletePage(req: Request, res: Response, next: NextFunctio
 {
     let id = req.params.id;
 
-  // db.competitor.remove({"_id: id"})
-  Competitor.remove({_id: id}, (err) => {
+  // db.contact.remove({"_id: id"})
+  Tournament.remove({_id: id}, (err) => {
     if(err)
     {
       console.error(err);
       res.end(err);
     }
 
-    res.redirect('/competitor-list');
+    res.redirect('/tournament-list');
   });
 }
-
-
-
