@@ -6,6 +6,7 @@
 
 import express from 'express';
 const router = express.Router();
+import { AuthGuard } from '../Util/index';
 export default router;
 
 // instantiate an object of type competitor controller
@@ -15,18 +16,18 @@ import {DisplayAddPage, DisplayCompetitorListPage, DisplayEditPage, ProcessAddPa
 router.get('/', DisplayCompetitorListPage); // default route
 
 /* GET - display /competitor-list/add page. */
-router.get('/add', DisplayAddPage);
+router.get('/add', AuthGuard, DisplayAddPage);
 
 // Display the Edit page by id
-router.get('/edit/:id', DisplayEditPage);
+router.get('/edit/:id', AuthGuard, DisplayEditPage);
 
 // Process the Add page
-router.post('/add', ProcessAddPage);
+router.post('/add', AuthGuard, ProcessAddPage);
 
 /* POST - process /competitor-list/edit/:id page */
-router.post('/edit/:id', ProcessEditPage);
+router.post('/edit/:id', AuthGuard, ProcessEditPage);
 
 /* GET - process /competitor-list/delete/:id */
-router.get('/delete/:id', ProcessDeletePage);
+router.get('/delete/:id', AuthGuard, ProcessDeletePage);
 
 

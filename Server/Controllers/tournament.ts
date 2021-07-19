@@ -4,11 +4,12 @@
 //      Date: July 13, 2021
 //
 import express, { Request, Response, NextFunction } from 'express';
-
+import { AuthGuard } from '../Util/index'; // import Util functions
 // Clothing Model
 import Competitor from '../Models/competitor';
 import Match from '../Models/match';
 import Tournament from '../Models/tournament';
+import { UserDisplayName } from '../Util';  // import Util functions
 
 // display page functions
 export function DisplayTournamentListPage(req: Request, res: Response, next: NextFunction): void
@@ -19,33 +20,30 @@ export function DisplayTournamentListPage(req: Request, res: Response, next: Nex
         {
             return console.error(err);
         }
-        res.render('index', {title: 'Tournament List', page: 'tournament-list', tournament: tournamentCollection});
+        res.render('index', {title: 'Tournament List', page: 'tournament-list', tournament: tournamentCollection, displayName: UserDisplayName(req)});
     });
 }
 
-export function DisplayEditPage(req: Request, res: Response, next: NextFunction): void
-{
-    let id = req.params.id;
+export function DisplayEditPage(req: Request, res: Response, next: NextFunction): void {
+  let id = req.params.id;
 
-    console.log(id);
+  console.log(id);
 
-    Tournament.findById(id, {}, {}, (err, tournamentItemToEdit) => 
-    {
-        if(err)
-        {
-            console.error(err);
-            res.end(err);
-        }
+  Tournament.findById(id, {}, {}, (err, tournamentItemToEdit) => {
+    if (err) {
+      console.error(err);
+      res.end(err);
+    }
 
-        // show the edit page
+    // show the edit page
 
-        res.render('index', {title: 'edittournament', page: 'edittournament', tournament: tournamentItemToEdit});
-    });
+    res.render('index', { title: 'edittournament', page: 'edittournament', tournament: tournamentItemToEdit, displayName: UserDisplayName(req) });
+  });
 }
 
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
-        res.render('index', {title: 'Add', page: 'edittournament', tournament: ''});
+        res.render('index', {title: 'Add', page: 'edittournament', tournament: '',displayName: UserDisplayName(req)});
 }
 
 // Process (E)dit page
@@ -104,18 +102,17 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
 }
 
 // Process (D)elete page
-export function ProcessDeletePage(req: Request, res: Response, next: NextFunction): void
-{
+  export function ProcessDeletePage(req: Request, res: Response, next: NextFunction): void
+  {
     let id = req.params.id;
 
-  // db.contact.remove({"_id: id"})
-  Tournament.remove({_id: id}, (err) => {
-    if(err)
-    {
-      console.error(err);
-      res.end(err);
-    }
+    // db.contact.remove({"_id: id"})
+    Tournament.remove({ _id: id }, (err) => {
+      if (err) {
+        console.error(err);
+        res.end(err);
+      }
 
-    res.redirect('/tournament-list');
-  });
-}
+      res.redirect('/tournament-list');
+    });
+  }

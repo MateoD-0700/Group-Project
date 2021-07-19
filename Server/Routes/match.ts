@@ -9,21 +9,22 @@ export default router;
 
 // instantiate an object of type competitor controller
 import { DisplayAddPage, DisplayMatchListPage, DisplayEditPage, ProcessAddPage, ProcessEditPage, ProcessDeletePage } from '../Controllers/match';
+import { AuthGuard } from '../Util/index';
 
-// Display the Competitor-List Page
+// Display the match-list Page
 router.get('/', DisplayMatchListPage); // default route
 
-/* GET - display /competitor-list/add page. */
-router.get('/add', DisplayAddPage);
+/* GET - display /match-list/add page. */
+router.get('/add', AuthGuard, DisplayAddPage);
 
 // Display the Edit page by id
-router.get('/edit/:id', DisplayEditPage);
+router.get('/edit/:id', AuthGuard, DisplayEditPage);
 
 // Display the Add page
-router.post('/add', ProcessAddPage);
+router.post('/add', AuthGuard, ProcessAddPage);
 
-/* POST - process /competitor-list/edit/:id page */
-router.post('/edit/:id', ProcessEditPage);
+/* POST - process /match-list/edit/:id page */
+router.post('/edit/:id', AuthGuard, ProcessEditPage);
 
-/* GET - process /competitor-list/delete/:id */
-router.get('/delete/:id', ProcessDeletePage);
+/* GET - process /match-list/delete/:id */
+router.get('/delete/:id', AuthGuard, ProcessDeletePage);

@@ -10,6 +10,17 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import mongoose, { mongo } from 'mongoose';
 
+//import modules for authentication
+import session from 'express-session';
+import passport from 'passport';
+import passportLocal from 'passport-local';
+
+// authentication objects
+let localStrategy = passportLocal.Strategy; // alias
+import User from '../Models/user';
+import flash from 'connect-flash'; //import module to authorize messaging/error management
+import cors from 'cors';        // module for cors
+
 // import the index router and inject a reference here
 import indexRouter from '../Routes/index';
 import competitorRouter from '../Routes/competitor';
@@ -45,6 +56,27 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+// add support for cors
+app.use(cors());
+
+// setup express session
+app.use(session({
+  secret: DBConfig.Secret,
+  saveUninitialized: false,
+  resave: false
+}));
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash()); // initialize flash
+
+// implement an Authorization Strategy - username/password
+passport.use(User.createStrategy());
+
+// serialize and deserialize the user data
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // perform routing
 app.use('/', indexRouter);

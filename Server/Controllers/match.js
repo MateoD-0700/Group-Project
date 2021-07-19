@@ -1,8 +1,3 @@
-//      File Name: match.js
-//      Author: Web Wiz
-//      Group Number: 1
-//      Date: July 13, 2021
-//
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };

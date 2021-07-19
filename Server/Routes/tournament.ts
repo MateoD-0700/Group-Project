@@ -9,21 +9,22 @@ export default router;
 
 // instantiate an object of type competitor controller
 import { DisplayAddPage, DisplayTournamentListPage, DisplayEditPage, ProcessAddPage, ProcessEditPage, ProcessDeletePage } from '../Controllers/tournament';
+import { AuthGuard } from '../Util/index'; // import Util functions
 
-// Display the Competitor-List Page
+// Display the tournament-List Page
 router.get('/', DisplayTournamentListPage); // default route
 
-/* GET - display /competitor-list/add page. */
-router.get('/add', DisplayAddPage);
+/* GET - display /tournament-List/add page. */
+router.get('/add', AuthGuard, DisplayAddPage);
 
 // Display the Edit page by id
-router.get('/edit/:id', DisplayEditPage);
+router.get('/edit/:id', AuthGuard, DisplayEditPage);
 
 // Display the Add page
-router.post('/add', ProcessAddPage);
+router.post('/add', AuthGuard, ProcessAddPage);
 
-/* POST - process /competitor-list/edit/:id page */
-router.post('/edit/:id', ProcessEditPage);
+/* POST - process /tournament-List/edit/:id page */
+router.post('/edit/:id', AuthGuard, ProcessEditPage);
 
-/* GET - process /competitor-list/delete/:id */
-router.get('/delete/:id', ProcessDeletePage);
+/* GET - process /tournament-List/delete/:id */
+router.get('/delete/:id', AuthGuard, ProcessDeletePage);

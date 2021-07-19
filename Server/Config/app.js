@@ -1,8 +1,3 @@
-//      File Name: app.js
-//      Author: Web Wiz
-//      Group Number: 1
-//      Date: July 13, 2021
-//
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -33,6 +28,13 @@ const path_1 = __importDefault(require("path"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const express_session_1 = __importDefault(require("express-session"));
+const passport_1 = __importDefault(require("passport"));
+const passport_local_1 = __importDefault(require("passport-local"));
+let localStrategy = passport_local_1.default.Strategy;
+const user_1 = __importDefault(require("../Models/user"));
+const connect_flash_1 = __importDefault(require("connect-flash"));
+const cors_1 = __importDefault(require("cors"));
 const index_1 = __importDefault(require("../Routes/index"));
 const competitor_1 = __importDefault(require("../Routes/competitor"));
 const match_1 = __importDefault(require("../Routes/match"));
@@ -56,6 +58,18 @@ app.use(express_1.default.urlencoded({ extended: false }));
 app.use(cookie_parser_1.default());
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../Client')));
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../node_modules')));
+app.use(cors_1.default());
+app.use(express_session_1.default({
+    secret: DBConfig.Secret,
+    saveUninitialized: false,
+    resave: false
+}));
+app.use(passport_1.default.initialize());
+app.use(passport_1.default.session());
+app.use(connect_flash_1.default());
+passport_1.default.use(user_1.default.createStrategy());
+passport_1.default.serializeUser(user_1.default.serializeUser());
+passport_1.default.deserializeUser(user_1.default.deserializeUser());
 app.use('/', index_1.default);
 app.use('/competitor-list', competitor_1.default);
 app.use('/match-list', match_1.default);
