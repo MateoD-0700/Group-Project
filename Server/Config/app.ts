@@ -1,3 +1,8 @@
+//      File Name: app.ts
+//      Author: Web Wiz
+//      Group Number: 1
+//      Date: July 13, 2021
+//
 import createError from 'http-errors';
 import express from 'express';
 import path from 'path';

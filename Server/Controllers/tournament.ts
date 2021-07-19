@@ -1,3 +1,8 @@
+//      File Name: tournament.ts
+//      Author: Web Wiz
+//      Group Number: 1
+//      Date: July 13, 2021
+//
 import express, { Request, Response, NextFunction } from 'express';
 
 // Clothing Model

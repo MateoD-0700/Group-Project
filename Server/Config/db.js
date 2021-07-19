@@ -1,3 +1,8 @@
+//      File Name: db.js
+//      Author: Web Wiz
+//      Group Number: 1
+//      Date: July 13, 2021
+//
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HostName = exports.RemoteURI = exports.LocalURI = void 0;
