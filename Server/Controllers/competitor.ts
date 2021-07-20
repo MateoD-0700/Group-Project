@@ -4,9 +4,11 @@
 //      Date: July 13, 2021
 //
 import express, { Request, Response, NextFunction } from 'express';
+//import { AuthGuard } from '../Util/index'; 
 
-// Clothing Model
 import Competitor from '../Models/competitor';
+import { UserDisplayName } from '../Util';
+
 
 // display page functions
 export function DisplayCompetitorListPage(req: Request, res: Response, next: NextFunction): void
@@ -18,7 +20,7 @@ export function DisplayCompetitorListPage(req: Request, res: Response, next: Nex
             return console.error(err);
         }
 
-        res.render('index', {title: 'Competitor List', page: 'competitor-list', competitor: competitorCollection});
+        res.render('index', {title: 'Competitor List', page: 'competitor-list', competitor: competitorCollection, displayName: UserDisplayName(req)});
     });
 }
 
@@ -38,13 +40,13 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 
         // show the edit page
 
-        res.render('index', {title: 'Edit', page: 'edit', competitor: competitorItemToEdit});
+        res.render('index', {title: 'Edit', page: 'edit', competitor: competitorItemToEdit, displayName: UserDisplayName(req)});
     });
 }
 
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
-        res.render('index', {title: 'Add', page: 'edit', competitor: ''});
+        res.render('index', {title: 'Add', page: 'edit', competitor: '', displayName: UserDisplayName(req)});
 }
 
 // Process (E)dit page

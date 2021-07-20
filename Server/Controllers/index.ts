@@ -151,6 +151,6 @@ export function ProcessLogoutPage(req: Request, res: Response, next: NextFunctio
 
 // export function DisplayCompetitorsListPage(req: Request, res: Response, next: NextFunction): void
 // {
-//     res.render('index', {title: 'Competitors List', page: 'competitor-list'});
+//     res.render('index', {title: 'Competitors List', page: 'competitor-list', displayName: UserDisplayName(req) });
 // }
 

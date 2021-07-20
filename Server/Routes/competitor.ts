@@ -4,13 +4,15 @@
 //      Date: July 13, 2021
 //
 
+
 import express from 'express';
 const router = express.Router();
-import { AuthGuard } from '../Util/index';
 export default router;
+
 
 // instantiate an object of type competitor controller
 import {DisplayAddPage, DisplayCompetitorListPage, DisplayEditPage, ProcessAddPage, ProcessEditPage, ProcessDeletePage } from '../Controllers/competitor';
+import { AuthGuard } from '../Util/index';
 
 // Display the Competitor-List Page
 router.get('/', DisplayCompetitorListPage); // default route

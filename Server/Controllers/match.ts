@@ -6,8 +6,9 @@
 import express, { Request, Response, NextFunction } from 'express';
 
 // Clothing Model
-import Competitor from '../Models/competitor';
+
 import Match from '../Models/match';
+import { UserDisplayName } from '../Util';  // import Util functions
 
 // display page functions
 export function DisplayMatchListPage(req: Request, res: Response, next: NextFunction): void
@@ -19,7 +20,7 @@ export function DisplayMatchListPage(req: Request, res: Response, next: NextFunc
             return console.error(err);
         }
 
-        res.render('index', {title: 'Match List', page: 'match-list', match: matchCollection});
+        res.render('index', {title: 'Match List', page: 'match-list', match: matchCollection, displayName: UserDisplayName(req)});
     });
 }
 
@@ -39,13 +40,13 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 
         // show the edit page
 
-        res.render('index', {title: 'editmatch', page: 'editmatch', match: matchItemToEdit});
+        res.render('index', {title: 'editmatch', page: 'editmatch', match: matchItemToEdit, displayName: UserDisplayName(req)});
     });
 }
 
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
-        res.render('index', {title: 'Add', page: 'editmatch', match: ''});
+        res.render('index', {title: 'Add', page: 'editmatch', match: '', displayName: UserDisplayName(req)});
 }
 
 // Process (E)dit page

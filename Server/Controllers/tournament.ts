@@ -43,7 +43,7 @@ export function DisplayEditPage(req: Request, res: Response, next: NextFunction)
 
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
-        res.render('index', {title: 'Add', page: 'edittournament', tournament: '',displayName: UserDisplayName(req)});
+        res.render('index', {title: 'Add', page: 'edittournament', tournament: '', displayName: UserDisplayName(req)});
 }
 
 // Process (E)dit page

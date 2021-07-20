@@ -5,9 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
-const index_1 = require("../Util/index");
 exports.default = router;
 const competitor_1 = require("../Controllers/competitor");
+const index_1 = require("../Util/index");
 router.get('/', competitor_1.DisplayCompetitorListPage);
 router.get('/add', index_1.AuthGuard, competitor_1.DisplayAddPage);
 router.get('/edit/:id', index_1.AuthGuard, competitor_1.DisplayEditPage);
