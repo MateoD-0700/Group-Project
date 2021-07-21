@@ -1,0 +1,30 @@
+#banner-msg{
+    font-size: 72px;
+    text-align: center;
+    padding-top:10% ;
+}
+.hm-background{
+    background-image:         linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+      ), url(../Assets/images/SF-fullrez.jpg);
+      background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    color: white;
+    font-family: 'Russo One', sans-serif;
+}
+.hm-trophy{
+    opacity: 80%;
+    width: 400px;
+}
+
+.header{
+    background-color: rgb(16, 4, 31);
+    border-bottom-left-radius:50% 50%;
+    border-bottom-right-radius:50% 50%;
+}
+.footer{
+    background-color: rgb(16, 4, 31);
+}

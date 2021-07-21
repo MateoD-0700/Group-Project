@@ -1,0 +1,236 @@
+<!--  File Name: viewtourney.ejs
+      Author: Web Wiz
+      Group Number: 1
+      Date: July 13, 2021
+-->
+<script>
+function toggleTable() {
+    document.getElementById("uno").classList.toggle("hidden");
+
+  let btnTrophy = document.querySelector("#btn");
+  btnTrophy.addEventListener("click",() => btnTrophy.style.backgroundColor= "green");
+}
+  </script>
+
+<%if (competitor.length == 8 ) { %>
+    <h1 class="text-center">Tournament Tree</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Team#</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                       
+                    <% for(let count=0; count < 2; count++) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= count + 1 %>
+                            </th>
+                            <td>
+                                <%= competitor[count].fullname %>
+                            </td>
+                            <td style="width:100px; margin: auto;" s class="text-center">
+
+                           
+                                <button id="btn" class="btn" onClick="toggleTable()" >
+                                    <i class="fas fa-trophy" ></i>  </button>
+                          </td>
+                        </tr>
+                            
+                         
+                        <% } %>
+
+                   
+                </tbody>
+            </table>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Team #</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col"></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count=2; count < 4; count++) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= count + 1 %>
+                            </th>
+                            <td>
+                                <%= competitor[count].fullname %>
+                            </td>
+                            <td style="width:100px; margin: auto;" class="text-center">
+                                <a href="/newtourney" class="btn btn-primary">
+                                    <i class="fas fa-trophy"></i>  </a>
+                          </td>
+                        </tr>
+                         <% } %>
+                        
+                      
+
+                </tbody>
+            </table>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Team #</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col"></th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count=4; count < 6; count++) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= count + 1 %>
+                            </th>
+                            <td>
+                                <%= competitor[count].fullname %>
+                            </td>
+                            <td style="width:100px; margin: auto;" class="text-center">
+                                <a href="/newtourney" class="btn btn-primary">
+                                    <i class="fas fa-trophy"></i>  </a>
+                          </td>
+                        </tr>
+
+                        <% } %>
+
+                </tbody>
+            </table>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Team #</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col"></th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count=6; count < 8; count++) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= count + 1 %>
+                            </th>
+                            <td>
+                                <%= competitor[count].fullname %>
+                            </td>
+                            <td style="width:100px; margin: auto;" class="text-center">
+                                <a href="/newtourney" class="btn btn-primary">
+                                    <i class="fas fa-trophy"></i>  </a>
+                          </td>
+                        </tr>
+
+                        <% } %>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="hidden col align-self-center" id="uno">
+            <table class="hidden table table-striped" >
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Team #</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col"></th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count=0; count < 2; count++) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= count + 1 %>
+                            </th>
+                            <td>
+                                <%= competitor[count].fullname %>
+                            </td>
+                            <td style="width:100px; margin: auto;" class="text-center">
+                                <a href="/newtourney" class="btn btn-primary">
+                                    <i class="fas fa-trophy"></i>  </a>
+                          </td>
+                        </tr>
+
+                        <% } %>
+
+                </tbody>
+            </table>
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Team #</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col"></th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count=2; count < 4; count++) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= count + 1 %>
+                            </th>
+                            <td>
+                                <%= competitor[count].fullname %>
+                            </td>
+                            <td style="width:100px; margin: auto;" class="text-center">
+                                <a href="/newtourney" class="btn btn-primary">
+                                    <i class="fas fa-trophy"></i>  </a>
+                          </td>
+                        </tr>
+
+                        <% } %>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="hidden col align-self-center" id="dos">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Team #</th>
+                        <th scope="col">Team Name</th>
+                        <th scope="col"></th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let count=0; count < 2; count++) { %>
+                        <tr>
+                            <th scope="row">
+                                <%= count + 1 %>
+                            </th>
+                            <td>
+                                <%= competitor[count].fullname %>
+                            </td>
+                            <td style="width:100px; margin: auto;" class="text-center">
+                                <a href="/newtourney" class="btn btn-primary">
+                                    <i class="fas fa-trophy"></i>  </a>
+                          </td>
+                        </tr>
+
+                        <% } %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<% } %>

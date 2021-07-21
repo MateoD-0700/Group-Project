@@ -3,15 +3,6 @@
       Group Number: 1
       Date: July 13, 2021
 -->
-<script>
-function toggleTable() {
-    document.getElementById("uno").classList.toggle("hidden");
-
-  let btnTrophy = document.querySelector("#btn");
-  btnTrophy.addEventListener("click",() => btnTrophy.style.backgroundColor= "green");
-}
-  </script>
-
 <%if (competitor.length == 8 ) { %>
     <h1 class="text-center">Tournament Tree</h1>
 
@@ -21,14 +12,13 @@ function toggleTable() {
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">Team#</th>
+                        <th scope="col">Team #</th>
                         <th scope="col">Team Name</th>
                         <th scope="col"></th>
 
                     </tr>
                 </thead>
                 <tbody>
-                       
                     <% for(let count=0; count < 2; count++) { %>
                         <tr>
                             <th scope="row">
@@ -37,18 +27,14 @@ function toggleTable() {
                             <td>
                                 <%= competitor[count].fullname %>
                             </td>
-                            <td style="width:100px; margin: auto;" s class="text-center">
-
-                           
-                                <button id="btn" class="btn" onClick="toggleTable()" >
-                                    <i class="fas fa-trophy" ></i>  </button>
+                            <td style="width:100px; margin: auto;" class="text-center">
+                                <a href="/newtourney" class="btn btn-primary">
+                                    <i class="fas fa-trophy"></i>  </a>
                           </td>
                         </tr>
-                            
-                         
+
                         <% } %>
 
-                   
                 </tbody>
             </table>
             <table class="table table-striped">
@@ -74,9 +60,8 @@ function toggleTable() {
                                     <i class="fas fa-trophy"></i>  </a>
                           </td>
                         </tr>
-                         <% } %>
-                        
-                      
+
+                        <% } %>
 
                 </tbody>
             </table>
@@ -139,8 +124,8 @@ function toggleTable() {
                 </tbody>
             </table>
         </div>
-        <div class="hidden col align-self-center" id="uno">
-            <table class="hidden table table-striped" >
+        <div class="col align-self-center">
+            <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">Team #</th>
@@ -199,7 +184,7 @@ function toggleTable() {
                 </tbody>
             </table>
         </div>
-        <div class="hidden col align-self-center" id="dos">
+        <div class="col align-self-center">
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -661,3 +646,4 @@ function toggleTable() {
 </div>
 
 <% } %>
+
