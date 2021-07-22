@@ -1,8 +1,3 @@
-body{
-    background-color: #C1C1C1;
-    font-family: 'Russo One', sans-serif;
-}
-
 #banner-msg{
     font-size: 72px;
     text-align: center;
@@ -91,30 +86,7 @@ body{
     background-color:#a2b9bc;
 }
 
-#logo,#navcontent{
+#logo{
     position: relative;
-   top: 27px; 
+   bottom: 100px; 
 }
-
-#comp{
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#comp th,#comp td{
-    border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#comp tr:nth-child(even){background-color: #f2f2f2;}
-
-#comp tr:hover {background-color: #ddd;}
-
-#comp th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #d5e1df;
-    color: black;
-  }
-

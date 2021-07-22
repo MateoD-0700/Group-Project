@@ -101,20 +101,9 @@ body{
   width: 100%;
 }
 
-#comp th,#comp td{
+#comp th, td{
     border: 1px solid #ddd;
   padding: 8px;
 }
 
-#comp tr:nth-child(even){background-color: #f2f2f2;}
-
-#comp tr:hover {background-color: #ddd;}
-
-#comp th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #d5e1df;
-    color: black;
-  }
 
