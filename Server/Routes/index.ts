@@ -8,15 +8,15 @@ const router = express.Router();
 export default router;
 
 // instantiate an object of type index controller DisplayCompetitorsListPage
-import { DisplayNewTourneyPage, DisplayAboutPage, DisplayHomePage, DisplayActiveTourneyPage, DisplayServicesPage, DisplayViewTourneyPage, DisplayLoginPage, ProcessLoginPage,  DisplayRegisterPage, ProcessRegisterPage, ProcessLogoutPage } from '../Controllers/index';
+import { DisplayNewTourneyPage, DisplayTournamentStatPage, DisplayHomePage, DisplayActiveTourneyPage, DisplayServicesPage, DisplayViewTourneyPage, DisplayLoginPage, ProcessLoginPage,  DisplayRegisterPage, ProcessRegisterPage, ProcessLogoutPage } from '../Controllers/index';
 /* GET home page. */
 router.get('/', DisplayHomePage);
 
 /* GET home page. */
 router.get('/home', DisplayHomePage);
 
-/* GET about page. */
-router.get('/about', DisplayAboutPage);
+/* GET tournament statistics page. */
+router.get('/tournamentstat', DisplayTournamentStatPage);
 
 /* GET projects page. */
 router.get('/activetourney', DisplayActiveTourneyPage);

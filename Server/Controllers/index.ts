@@ -20,9 +20,9 @@ export function DisplayHomePage(req: Request, res: Response, next: NextFunction)
     res.render('index', { title: 'Home', page: 'home',  displayName: UserDisplayName(req)  });
 }
 
-export function DisplayAboutPage(req: Request, res: Response, next: NextFunction): void
+export function DisplayTournamentStatPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'About Us', page: 'about',  displayName: UserDisplayName(req) });
+    res.render('index', { title: 'Tournament Statistics', page: 'tournamentstat',  displayName: UserDisplayName(req) });
 }
 
 export function DisplayActiveTourneyPage(req: Request, res: Response, next: NextFunction): void

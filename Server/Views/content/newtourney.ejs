@@ -3,6 +3,8 @@
       Group Number: 1
       Date: July 13, 2021
 -->
+<% if(displayName) { %>
+       
 <div class="container">
 <div class="jumbotron">
   <h1 class="display-4 d-flex justify-content-center" style="font-family: Roboto, sans-serif;">Create A New Tournament</h1>    
@@ -38,7 +40,12 @@
         <div class="d-flex  justify-content-center mt-4">
             <a href="/competitor-list"><button type="button" class="btn btn-primary" style="width: 100px;">Create</button></a>
         </div>
-        
+        <% } else { %>
+            <%- include('login.ejs'); %>
+        <% } %>
       </form>
+      
 </div>
 </div>
+ 
+

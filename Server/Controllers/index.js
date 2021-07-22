@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.DisplayRegisterPage = exports.ProcessLoginPage = exports.DisplayLoginPage = exports.DisplayViewTourneyPage = exports.DisplayNewTourneyPage = exports.DisplayServicesPage = exports.DisplayActiveTourneyPage = exports.DisplayAboutPage = exports.DisplayHomePage = void 0;
+exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.DisplayRegisterPage = exports.ProcessLoginPage = exports.DisplayLoginPage = exports.DisplayViewTourneyPage = exports.DisplayNewTourneyPage = exports.DisplayServicesPage = exports.DisplayActiveTourneyPage = exports.DisplayTournamentStatPage = exports.DisplayHomePage = void 0;
 const passport_1 = __importDefault(require("passport"));
 const user_1 = __importDefault(require("../Models/user"));
 const Util_1 = require("../Util");
@@ -13,10 +13,10 @@ function DisplayHomePage(req, res, next) {
     res.render('index', { title: 'Home', page: 'home', displayName: Util_1.UserDisplayName(req) });
 }
 exports.DisplayHomePage = DisplayHomePage;
-function DisplayAboutPage(req, res, next) {
-    res.render('index', { title: 'About Us', page: 'about', displayName: Util_1.UserDisplayName(req) });
+function DisplayTournamentStatPage(req, res, next) {
+    res.render('index', { title: 'Tournament Statistics', page: 'tournamentstat', displayName: Util_1.UserDisplayName(req) });
 }
-exports.DisplayAboutPage = DisplayAboutPage;
+exports.DisplayTournamentStatPage = DisplayTournamentStatPage;
 function DisplayActiveTourneyPage(req, res, next) {
     res.render("index", { title: "Active Tournaments", page: "activetourney", displayName: Util_1.UserDisplayName(req) });
 }

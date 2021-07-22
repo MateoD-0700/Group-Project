@@ -1,7 +1,9 @@
+<div class="login-background">
 <div class="container">
 <div class="row">
-    <div class="offset-md-3 col-md-6 col-sm-12">
-          <div class="login" id="contentArea">
+  <div class="login-position">
+    <div class="offset-md-3 col-md-6 col-sm-12">          
+      <div class="login" id="contentArea">
               <h1 class="display-4">Login</h1>
 
               <!-- message area -->
@@ -10,7 +12,7 @@
                 <%= messages %>
               </div>
               <% } %>
-
+              <br>
               <form id="loginForm" novalidate method="POST">
                 <div class="form-group">
                   <div class="input-group">
@@ -39,12 +41,13 @@
                   <button id="cancelButton" type="reset" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</button>
                 </div>
               </form>
-             
+            </div>
           </div>
           <p class="text-center text-muted small">
             Don't have an account? 
             <a href="/register">Register Here!</a>
           </p>
     </div>
+</div>
 </div>
 </div>
