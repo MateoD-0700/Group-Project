@@ -41,22 +41,23 @@ export function DisplayNewTourneyPage(req: Request, res: Response, next: NextFun
 
 export function DisplayViewTourneyPage(req: Request, res: Response, next: NextFunction): void
 {
-    Competitor.find(function(err, competitorCollection){
-        if(err)
-        {
+    Competitor.find(function (err, competitorCollection) {
+        if (err) {
             return console.error(err);
         }
 
-        res.render('index', {title: 'Tournament Tree', page: 'viewtourney', competitor: competitorCollection,  displayName: UserDisplayName(req) });
-    });
 
-    Tournament.find(function(err, tournamentCollection){
-        if(err)
-        {
-            return console.error(err);
-        }
-        res.render('index', {title: 'Tournament Tree', page: 'viewtourney', tournament: tournamentCollection,  displayName: UserDisplayName(req) });
-    });
+        Tournament.find(function (err, tournamentCollection) {
+
+            if (err) {
+                return console.error(err);
+            }
+
+
+            res.render('index', { title: 'Tournament Tree', page: 'viewtourney', competitor: competitorCollection, tournament: tournamentCollection, displayName: UserDisplayName(req) });
+
+        });
+    })
 }
 
 export function DisplayLoginPage(req: Request, res: Response, next: NextFunction): void

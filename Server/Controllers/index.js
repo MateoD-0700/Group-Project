@@ -34,13 +34,12 @@ function DisplayViewTourneyPage(req, res, next) {
         if (err) {
             return console.error(err);
         }
-        res.render('index', { title: 'Tournament Tree', page: 'viewtourney', competitor: competitorCollection, displayName: Util_1.UserDisplayName(req) });
-    });
-    tournament_1.default.find(function (err, tournamentCollection) {
-        if (err) {
-            return console.error(err);
-        }
-        res.render('index', { title: 'Tournament Tree', page: 'viewtourney', tournament: tournamentCollection, displayName: Util_1.UserDisplayName(req) });
+        tournament_1.default.find(function (err, tournamentCollection) {
+            if (err) {
+                return console.error(err);
+            }
+            res.render('index', { title: 'Tournament Tree', page: 'viewtourney', competitor: competitorCollection, tournament: tournamentCollection, displayName: Util_1.UserDisplayName(req) });
+        });
     });
 }
 exports.DisplayViewTourneyPage = DisplayViewTourneyPage;
