@@ -36,10 +36,10 @@ function ProcessEditPage(req, res, next) {
     let updatedTournamentItem = new tournament_1.default({
         "_id": id,
         "tournamentName": req.body.tournamentName,
+        "tournament_Custom_Id": req.body.tournament_Custom_Id,
         "numberOfCompetitors": req.body.numberOfCompetitors,
         "type": req.body.type,
         "description": req.body.description,
-        "competitorList": req.body.competitorList,
         "champion": req.body.champion
     });
     tournament_1.default.updateOne({ _id: id }, updatedTournamentItem, {}, (err) => {
@@ -54,10 +54,10 @@ exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newTournament = new tournament_1.default({
         "tournamentName": req.body.tournamentName,
+        "tournament_Custom_Id": req.body.tournament_Custom_Id,
         "numberOfCompetitors": req.body.numberOfCompetitors,
         "type": req.body.type,
         "description": req.body.description,
-        "competitorList": req.body.competitorList,
         "champion": req.body.champion
     });
     tournament_1.default.create(newTournament, (err) => {

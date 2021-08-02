@@ -13,6 +13,12 @@
             <label for="exampleFormControlInput1">Tournament's Name</label><br>
             <input type="text" class="form-control" id="tournamentName" placeholder="Name" value="<%= tournament.tournamentName %>" name="tournamentName" required><br>
         </div>
+        
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Tournament's Custom ID</label><br>
+            <input type="number" class="form-control" id="tournament_Custom_Id" placeholder="Tournament Custom ID" value="<%= tournament.tournament_Custom_ID %>" name="tournament_Custom_Id" required><br>
+        </div>
+
 
         <div class="input-group mb-3">
             <div class="form-group">
@@ -27,6 +33,7 @@
               </div>
               </div>           
         </div>
+
         <div class="form-group">
             <label for="cars">Select Tournament Type: </label>
             <select name="type" id="type">

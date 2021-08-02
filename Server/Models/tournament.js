@@ -6,12 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const Schema = mongoose_1.default.Schema;
 const TournamentItemSchema = new Schema({
-    tournamentId: Number,
     tournamentName: String,
+    tournament_Custom_Id: Number,
     numberOfCompetitors: Number,
     type: String,
     description: String,
-    competitorList: String,
     champion: String
 }, {
     collection: "tournament"

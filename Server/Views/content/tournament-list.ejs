@@ -5,7 +5,7 @@
 -->
 <div class="container">
 <h1>Tournament List</h1>
-<div class="row">
+<div class="row">                 
     <div class="col">
       <% if(displayName) { %>
         <a href="/tournament-list/add" id="addButton" class="btn mb-5"><i class="fas fa-plus-circle"></i> Add Tournament</a>
@@ -15,10 +15,10 @@
               <tr>
                 <th scope="col">Tournament ID</th>
                 <th scope="col">Tournament Name</th>
+                <th scope="col">Tournament Custom ID</th>
                 <th scope="col">Number of Competitors</th>
                 <th scope="col">Type</th>
                 <th scope="col">Description</th>
-                <th scope="col">List of Competitors</th>
                 <th scope="col">Champion</th>
 
                   <% if(displayName) { %>
@@ -37,10 +37,10 @@
               <tr>
                 <th scope="row"><%= count + 1 %></th>
                 <td><%= tournament[count].tournamentName %> </td>
+                <td><%= tournament[count].tournament_Custom_Id%> </td>
                 <td><%= tournament[count].numberOfCompetitors %> </td>
                 <td><%= tournament[count].type %> </td>
                 <td><%= tournament[count].description %> </td>
-                <td><%= tournament[count].competitorList %> </td>
                 <td><%= tournament[count].champion %> </td>
 
                 <% if(displayName) { %>

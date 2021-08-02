@@ -56,10 +56,10 @@ export function ProcessEditPage(req: Request, res: Response, next: NextFunction)
     ({
        "_id": id,
       "tournamentName": req.body.tournamentName,
+      "tournament_Custom_Id": req.body.tournament_Custom_Id,
       "numberOfCompetitors": req.body.numberOfCompetitors,
       "type": req.body.type,
       "description": req.body.description,
-        "competitorList": req.body.competitorList,
       "champion": req.body.champion
     });
   
@@ -81,11 +81,11 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
   // instantiate a new Competitor
   let newTournament = new Tournament
   ({
-      "tournamentName": req.body.tournamentName,
+    "tournamentName": req.body.tournamentName,
+    "tournament_Custom_Id": req.body.tournament_Custom_Id,
       "numberOfCompetitors": req.body.numberOfCompetitors,
       "type": req.body.type,
       "description": req.body.description,
-      "competitorList": req.body.competitorList,
       "champion": req.body.champion
   });
 
