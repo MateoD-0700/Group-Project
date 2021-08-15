@@ -97,7 +97,7 @@ export function ProcessAddPage(req: Request, res: Response, next: NextFunction):
       res.end(err);
     }
 
-    res.redirect('/tournament-list');
+    res.redirect('/competitor-list');
   });
 }
 

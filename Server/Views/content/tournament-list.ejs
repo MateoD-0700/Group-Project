@@ -4,7 +4,7 @@
       Date: July 13, 2021
 -->
 <div class="container">
-<h1>Tournament List</h1>
+<h1 >Tournament List</h1>
 <div class="row">                 
     <div class="col">
       <% if(displayName) { %>
@@ -20,7 +20,7 @@
                 <th scope="col">Type</th>
                 <th scope="col">Description</th>
                 <th scope="col">Champion</th>
-
+                <th></th>
                   <% if(displayName) { %>
                    <th></th>
                    <th></th>
@@ -42,9 +42,10 @@
                 <td><%= tournament[count].type %> </td>
                 <td><%= tournament[count].description %> </td>
                 <td><%= tournament[count].champion %> </td>
-
+                
                 <% if(displayName) { %>
-                <td class="text-center "><a href="/viewtourney" class="btn btn-success"><i class="fas fa-binoculars"></i> View</a></td>
+                <td class="text-center "><a href="/viewtourney" class="btn btn-success" onclick="store(this.id)" id="<%= tournament[count].tournament_Custom_Id%>" ><i class="fas fa-binoculars"></i>View</a></td>
+                <td class="text-center "><a href="/competitor-list" class="btn btn-dark" onclick="store(this.id)" id="<%= tournament[count].tournament_Custom_Id%>" ><i class="fas fa-list"></i>Competitors</a></td>
                 <td class="text-center "><a href="/tournament-list/edit/<%= tournament[count]._id %>" class="btn btn-primary"><i class="far fa-edit"></i> Edit</a></td>
                 <td class="text-center "><a href="/tournament-list/delete/<%= tournament[count]._id %>" onclick="return confirm('Are you sure you want to delete this item? This action cannot be undone!');"class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</a></td>
                 <% } %>
@@ -59,3 +60,11 @@
     </div>
 </div>
 </div>
+<script>
+  function store (clicked_id) {
+  let first = clicked_id;
+  sessionStorage.setItem("tourney",first);
+  console.log(first);
+}
+</script>
+

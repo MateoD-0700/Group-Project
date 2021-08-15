@@ -8,10 +8,10 @@ const Schema = mongoose.Schema; // alias for the mongoose schema
 
 const CompetitorItemSchema = new Schema
     ({
-        comp_Tournament_Id: Number,
-    win_Lose: Boolean,
-    fullname: String,
-    description: String
+        comp_Tournament_Id: String,
+        status: Boolean,
+        fullname: String,
+        description: String
 },
 {
     collection: "competitor"

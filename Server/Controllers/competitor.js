@@ -5,13 +5,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProcessDeletePage = exports.ProcessAddPage = exports.ProcessEditPage = exports.DisplayAddPage = exports.DisplayEditPage = exports.DisplayCompetitorListPage = void 0;
 const competitor_1 = __importDefault(require("../Models/competitor"));
+const tournament_1 = __importDefault(require("../Models/tournament"));
 const Util_1 = require("../Util");
 function DisplayCompetitorListPage(req, res, next) {
     competitor_1.default.find(function (err, competitorCollection) {
         if (err) {
             return console.error(err);
         }
-        res.render('index', { title: 'Competitor List', page: 'competitor-list', competitor: competitorCollection, displayName: Util_1.UserDisplayName(req) });
+        tournament_1.default.find(function (err, tournamentCollection) {
+            if (err) {
+                return console.error(err);
+            }
+            res.render('index', { title: 'Competitor List', page: 'competitor-list', competitor: competitorCollection, tournament: tournamentCollection, displayName: Util_1.UserDisplayName(req) });
+        });
     });
 }
 exports.DisplayCompetitorListPage = DisplayCompetitorListPage;
@@ -50,7 +56,8 @@ exports.ProcessEditPage = ProcessEditPage;
 function ProcessAddPage(req, res, next) {
     let newCompetitor = new competitor_1.default({
         "fullname": req.body.fullname,
-        "description": req.body.description
+        "description": req.body.description,
+        "comp_Tournament_Id": req.body.comp_Tournament_Id
     });
     competitor_1.default.create(newCompetitor, (err) => {
         if (err) {

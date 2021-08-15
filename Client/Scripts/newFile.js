@@ -4,3 +4,8 @@ function roundWinner()
     let round2 = document.getElementById("match2")
 
 }
+
+function getTourneyID(){
+    let id = document.getElementByTagName("button").value;
+    document.write(id);
+}

@@ -3,7 +3,7 @@
       Group Number: 1
       Date: July 13, 2021
 -->
-<script>
+ <!--<script>
 function toggleTable() {
     document.getElementById("uno").classList.toggle("hidden");
 
@@ -11,9 +11,15 @@ function toggleTable() {
   btnTrophy.addEventListener("click",() => btnTrophy.style.backgroundColor= "green");
 }
   </script>
-
+-->
+<script>
+    function get () {
+    let tourneyID = sessionStorage.getItem("tourney")
+    console.log(tourneyID);
+  }
+</script>
 <%if (competitor.length == 8 ) { %>
-    <h1 class="text-center">Tournament Tree</h1>
+    <h1 class="text-center" >Tournament Bracket</h1>
 
 <div class="container">
     <div class="row">
@@ -29,9 +35,8 @@ function toggleTable() {
                 </thead>
                 <tbody>
                     <% for(let count=0; count < 1; count++) { %>
-                        <tr>
-                            
-                            <td id="winner1">
+                        <tr>                            
+                            <td id="winner1">                                
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>

@@ -12,6 +12,7 @@ const TournamentItemSchema = new Schema
         tournamentName: String,
         tournament_Custom_Id: Number,
         numberOfCompetitors: Number,
+        status: Boolean,
         type: String,
         description: String,
         champion: String

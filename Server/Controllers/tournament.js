@@ -65,7 +65,7 @@ function ProcessAddPage(req, res, next) {
             console.error(err);
             res.end(err);
         }
-        res.redirect('/tournament-list');
+        res.redirect('/competitor-list');
     });
 }
 exports.ProcessAddPage = ProcessAddPage;
