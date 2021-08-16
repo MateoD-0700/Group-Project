@@ -28,6 +28,7 @@ function toggleTable() {
 <div class="container">
     <div class="row">
         <div class="col-3">
+        <h1>Quarter-Finals</h1>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -57,7 +58,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton2" onclick="nextRoundB()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton2" onclick="nextRoundB();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -82,7 +83,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton3" onclick="nextRoundC()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton3" onclick="nextRoundC();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -96,7 +97,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton4" onclick="nextRoundD()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton4" onclick="nextRoundD();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -123,7 +124,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton5" onclick="nextRoundE()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton5" onclick="nextRoundE();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -137,7 +138,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton6" onclick="nextRoundF()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton6" onclick="nextRoundF();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -163,7 +164,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton7" onclick="nextRoundG()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton7" onclick="nextRoundG();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -177,7 +178,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton8" onclick="nextRoundH()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton8" onclick="nextRoundH();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -188,6 +189,7 @@ function toggleTable() {
             </table>
         </div>
         <div class="col-3 align-self-center">
+                <h1>Semi-Finals</h1>
             <table class="table table-striped" id="newmatch">
                 <thead class="table-dark">
                     <tr>
@@ -206,7 +208,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton9" onclick="nextRoundI()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton9" onclick="nextRoundI();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -217,7 +219,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton10" onclick="nextRoundJ()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton10" onclick="nextRoundJ();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -244,7 +246,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton11" onclick="nextRoundK()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton11" onclick="nextRoundK();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -255,7 +257,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton12" onclick="nextRoundL()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton12" onclick="nextRoundL();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -263,6 +265,7 @@ function toggleTable() {
             </table>
         </div>
         <div class="col-3 align-self-center">
+                <h1>Finals</h1>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -280,7 +283,7 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton13" onclick="nextRoundM()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton13" onclick="nextRoundM();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
                         <tr>
@@ -290,7 +293,7 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton14" onclick="nextRoundN()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton14" onclick="nextRoundN();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
 
@@ -303,8 +306,9 @@ function toggleTable() {
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">Champion</th>
-
+                        <th scope="col">Champion  <i class="fas fa-trophy" style="color:yellow"></i></th>
+                        
+                       
 
                     </tr>
                 </thead>
@@ -335,7 +339,8 @@ function toggleTable() {
     <h1 class="text-center">Tournament Tree</h1>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-1">
+        <div class="col-2" style="width: 10.499999995%">
+        <h3>Quarter-Finals</h3>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -353,7 +358,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton" onclick="nextRound()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton" onclick="nextRound();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -366,7 +371,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton2" onclick="nextRoundB()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton2" onclick="nextRoundB();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -391,7 +396,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton3" onclick="nextRoundC()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton3" onclick="nextRoundC();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -405,7 +410,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton4" onclick="nextRoundD()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton4" onclick="nextRoundD();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -432,7 +437,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton5" onclick="nextRoundE()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton5" onclick="nextRoundE();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -446,7 +451,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton6" onclick="nextRoundF()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton6" onclick="nextRoundF();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -472,7 +477,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton7" onclick="nextRoundG()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton7" onclick="nextRoundG();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -486,7 +491,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton8" onclick="nextRoundH()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton8" onclick="nextRoundH();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                           
                         </tr>
@@ -496,7 +501,8 @@ function toggleTable() {
                 </tbody>
             </table>
         </div>
-        <div class="col-1 align-self-center">
+        <div class="col-2 align-self-center" style="width: 10.499999995%">
+                <h3>Semi-Finals</h3>
             <table class="table table-striped" id="newmatch">
                 <thead class="table-dark">
                     <tr>
@@ -515,7 +521,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton9" onclick="nextRoundI()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton9" onclick="nextRoundI();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -526,7 +532,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton10" onclick="nextRoundJ()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton10" onclick="nextRoundJ();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -553,7 +559,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton11" onclick="nextRoundK()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton11" onclick="nextRoundK();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -564,14 +570,15 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton12" onclick="nextRoundL()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton12" onclick="nextRoundL();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
                 </tbody>
             </table>
         </div>
-        <div class="col-1 align-self-center">
+        <div class="col-2 align-self-center" style="width: 10.499999995%">
+                <h3>Conf-Finals</h3>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -589,7 +596,7 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton13" onclick="nextRoundM()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton13" onclick="nextRoundM();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
                         <tr>
@@ -599,7 +606,7 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton14" onclick="nextRoundN()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton14" onclick="nextRoundN();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
 
@@ -608,7 +615,8 @@ function toggleTable() {
                 </tbody>
             </table>
         </div>
-        <div class="col-1 align-self-center">
+        <div class="col-2 align-self-center" style="width: 10.499999995%">
+                <h3>Conf-Winner</h3>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -626,7 +634,7 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton15" onclick="nextRoundO()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton15" onclick="nextRoundO();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
 
@@ -635,7 +643,7 @@ function toggleTable() {
                 </tbody>
             </table>
         </div>
-        <div class="col-1 align-self-center">
+        <div class="col-2 align-self-center" style="width: 10.499999995%">
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -658,7 +666,8 @@ function toggleTable() {
                 </tbody>
             </table>
         </div>
-        <div class="col-1 align-self-center">
+        <div class="col-2 align-self-center" style="width: 11.499999995%">
+                        <h3>Conf-Winner</h3>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -676,7 +685,7 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton16" onclick="nextRoundEE()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton16" onclick="nextRoundEE();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
 
@@ -685,7 +694,8 @@ function toggleTable() {
                 </tbody>
             </table>
         </div>
-        <div class="col-1 align-self-center">
+        <div class="col-2 align-self-center" style="width: 11.499999995%">
+                        <h3>Conf-Finals</h3>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -703,7 +713,7 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton17" onclick="nextRoundCC()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton17" onclick="nextRoundCC();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
                         <tr>
@@ -713,14 +723,15 @@ function toggleTable() {
                             </td>
                             
                             <td>
-                             <button id="myButton18" onclick="nextRoundDD()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton18" onclick="nextRoundDD();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                         </tr>
 
                 </tbody>
             </table>
         </div>
-        <div class="col-1 align-self-center">
+        <div class="col-2 align-self-center" style="width: 11.499999995%">
+                                <h3>Semi-Finals</h3>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -738,7 +749,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton19" onclick="nextRoundY()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton19" onclick="nextRoundY();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -749,7 +760,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton20" onclick="nextRoundZ()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton20" onclick="nextRoundZ();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -774,7 +785,7 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton21" onclick="nextRoundAA()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton21" onclick="nextRoundAA();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
@@ -785,14 +796,15 @@ function toggleTable() {
 
                             </td>
                             <td>
-                             <button id="myButton22" onclick="nextRoundBB()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton22" onclick="nextRoundBB();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td> 
                          
                         </tr>
                 </tbody>
             </table>
         </div>
-        <div class="col-1">
+        <div class="col-2" style="width: 11.499999995%">
+                                <h3>Quarter-Finals</h3>
             <table class="table table-striped">
                 <thead class="table-dark">
                     <tr>
@@ -810,7 +822,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton23" onclick="nextRoundP()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton23" onclick="nextRoundP();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -823,7 +835,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton24" onclick="nextRoundQ()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton24" onclick="nextRoundQ();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -847,7 +859,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton25" onclick="nextRoundR()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton25" onclick="nextRoundR();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -860,7 +872,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton26" onclick="nextRoundS()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton26" onclick="nextRoundS();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -886,7 +898,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton27" onclick="nextRoundT()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton27" onclick="nextRoundT();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -899,7 +911,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton28" onclick="nextRoundU()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton28" onclick="nextRoundU();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -925,7 +937,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton29" onclick="nextRoundV()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton29" onclick="nextRoundV();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
@@ -938,7 +950,7 @@ function toggleTable() {
                                 <%= competitor[count].fullname %>
                             </td>
                             <td>
-                             <button id="myButton30" onclick="nextRoundW()" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
+                             <button id="myButton30" onclick="nextRoundW();submitButtonStyle(this);" type="button" class="btn btn-primary"><i class="fas fa-trophy"></i></button>
                             </td>                           
                         </tr>
 
